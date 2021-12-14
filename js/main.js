@@ -20,8 +20,10 @@ function getRandomNumber(max) {
 
 
 function handleClick(event) {
+
+    event.preventDefault();
     //Cuando pulse necesito recoger el valor selecionado
-    const optionPlayer = options.value
+    const optionPlayer = parseInt(options.value);
 
     //Convierto el valor aletorio al valor del seleccionable
 
@@ -39,8 +41,12 @@ function handleClick(event) {
 
     if (optionPlayer === optionComputer) {
         result.innerHTML = "Empate";
-    } else if () {
-
+    } else if (optionPlayer === 1 && optionComputer === 3 ||
+        optionPlayer === 2 && optionComputer === 1 || optionPlayer === 3 && optionComputer === 2) {
+        //Ponemos lasnopciones para que gane el jugador
+        result.innerHTML = "Has ganado!";
+    } else {
+        result.innerHTML = "Has perdido";
     }
 
     //Mostrar mensaje
