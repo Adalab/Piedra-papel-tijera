@@ -23,7 +23,8 @@ function getRandomNumber(max) {
 //Lo creo fuera para que no se pierda el valor
 let counterPlayer = 0;
 let counterComputer = 0;
-
+//Contador numero de intentos
+let counterTry = 0;
 
 function handleClick(event) {
 
@@ -56,10 +57,22 @@ function handleClick(event) {
         result.innerHTML = "Has perdido";
         computer.innerHTML = ++counterComputer;
     }
+    //Para reiniciar el random si no siempre el mismo resultado la computadora
+    optionComputer = getRandomNumber(10);
 
-    //Mostrar mensaje
+    //Comprobamos numero de intentos
+    counterTry++;
 
-    //incrementar el contador
+    if (counterTry > 10) {
+        counterPlayer = 0;
+        counterComputer = 0;
+
+        counterTry = 0;
+
+        //Metemos el resultado dentro del inner
+        player.innerHTML = counterPlayer;
+        computer.innerHTML = counterComputer;
+    }
 
 }
 
