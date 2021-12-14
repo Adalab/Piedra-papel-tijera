@@ -45,8 +45,9 @@ function handleClick(event) {
     //Cuando tenga el valor seleccionado tengo que compararlo con el valor generado aleatorio.
 
 
-
-    if (optionPlayer === optionComputer) {
+    if (optionPlayer === 0) {
+        result.innerHTML = "Seleccione una opción";
+    } else if (optionPlayer === optionComputer) {
         result.innerHTML = "Empate";
     } else if (optionPlayer === 1 && optionComputer === 3 ||
         optionPlayer === 2 && optionComputer === 1 || optionPlayer === 3 && optionComputer === 2) {
