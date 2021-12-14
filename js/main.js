@@ -19,6 +19,12 @@ function getRandomNumber(max) {
 }
 
 
+//Creo un contador para el numero de victorias
+//Lo creo fuera para que no se pierda el valor
+let counterPlayer = 0;
+let counterComputer = 0;
+
+
 function handleClick(event) {
 
     event.preventDefault();
@@ -45,8 +51,10 @@ function handleClick(event) {
         optionPlayer === 2 && optionComputer === 1 || optionPlayer === 3 && optionComputer === 2) {
         //Ponemos lasnopciones para que gane el jugador
         result.innerHTML = "Has ganado!";
+        player.innerHTML = ++counterPlayer;
     } else {
         result.innerHTML = "Has perdido";
+        computer.innerHTML = ++counterComputer;
     }
 
     //Mostrar mensaje
