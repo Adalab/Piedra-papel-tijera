@@ -1,13 +1,21 @@
 'use strict';
+//Creo un contador para el numero de victorias
+//Lo creo fuera para que no se pierda el valor
+let counterPlayer = 0;
+let counterComputer = 0;
+//Contador numero de intentos
+let counterTry = 0;
 
 //1.Recogemos los elementos
-
 const options = document.querySelector('.js_option');
 const button = document.querySelector('.js_button');
 const player = document.querySelector('.js_player');
 const computer = document.querySelector('.js_computer');
 const result = document.querySelector('.js_result')
 const buttonReset = document.querySelector('.js_buttonReset');
+
+
+
 
 //Añado la clase de hidden al botón reset
 buttonReset.classList.add('hidden');
@@ -18,12 +26,6 @@ function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
 
-//Creo un contador para el numero de victorias
-//Lo creo fuera para que no se pierda el valor
-let counterPlayer = 0;
-let counterComputer = 0;
-//Contador numero de intentos
-let counterTry = 0;
 
 function handleClick(event) {
 
