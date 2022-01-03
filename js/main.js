@@ -28,6 +28,9 @@ let counterTry = 0;
 
 function handleClick(event) {
 
+    //Para reiniciar el random si no siempre el mismo resultado la computadora
+    optionComputer = getRandomNumber(10);
+
     event.preventDefault();
     //Cuando pulse necesito recoger el valor selecionado
     const optionPlayer = parseInt(options.value);
@@ -45,9 +48,6 @@ function handleClick(event) {
     //Cuando tenga el valor seleccionado tengo que compararlo con el valor generado aleatorio.
 
     feedbackPainter();
-
-    //Para reiniciar el random si no siempre el mismo resultado la computadora
-    optionComputer = getRandomNumber(10);
 
     //Comprobamos numero de intentos
     counterTry++;
