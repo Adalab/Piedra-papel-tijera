@@ -48,6 +48,28 @@ function handleClick(event) {
     //Llamar y enviar una variable
     feedbackPainter(optionPlayer, optionComputer);
 
+    icrementCounter();
+}
+
+function feedbackPainter(optionPlayer, optionComputer) {
+    let resultText = '';
+    if (optionPlayer === 0) {
+        resultText = "Seleccione una opción";
+    } else if (optionPlayer === optionComputer) {
+        resultText = "Empate";
+    } else if (optionPlayer === 1 && optionComputer === 3 ||
+        optionPlayer === 2 && optionComputer === 1 || optionPlayer === 3 && optionComputer === 2) {
+        //Ponemos lasnopciones para que gane el jugador
+        resultText = "Has ganado!";
+        player.innerHTML = ++counterPlayer;
+    } else {
+        resultText = "Has perdido";
+        computer.innerHTML = ++counterComputer;
+    }
+    result.innerHTML = resultText;
+}
+
+function icrementCounter() {
     //Comprobamos numero de intentos
     counterTry++;
 
@@ -56,22 +78,6 @@ function handleClick(event) {
     } else {
         //Añado la clase de hidden al botón reset
         buttonReset.classList.add('hidden');
-    }
-}
-
-function feedbackPainter(optionPlayer, optionComputer) {
-    if (optionPlayer === 0) {
-        result.innerHTML = "Seleccione una opción";
-    } else if (optionPlayer === optionComputer) {
-        result.innerHTML = "Empate";
-    } else if (optionPlayer === 1 && optionComputer === 3 ||
-        optionPlayer === 2 && optionComputer === 1 || optionPlayer === 3 && optionComputer === 2) {
-        //Ponemos lasnopciones para que gane el jugador
-        result.innerHTML = "Has ganado!";
-        player.innerHTML = ++counterPlayer;
-    } else {
-        result.innerHTML = "Has perdido";
-        computer.innerHTML = ++counterComputer;
     }
 }
 
