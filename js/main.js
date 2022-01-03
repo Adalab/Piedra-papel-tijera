@@ -7,17 +7,16 @@ const button = document.querySelector('.js_button');
 const player = document.querySelector('.js_player');
 const computer = document.querySelector('.js_computer');
 const result = document.querySelector('.js_result')
+const buttonReset = document.querySelector('.js_buttonReset');
 
-//Creo una variable para la opcion de la maquina, le paso un 10 para que me devuelva un valor del 1-10.
-let optionComputer = getRandomNumber(10);
-
+//Añado la clase de hidden al botón reset
+buttonReset.classList.add('hidden');
 
 //Funciones
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
-
 
 //Creo un contador para el numero de victorias
 //Lo creo fuera para que no se pierda el valor
@@ -29,7 +28,7 @@ let counterTry = 0;
 function handleClick(event) {
 
     //Para reiniciar el random si no siempre el mismo resultado la computadora
-    optionComputer = getRandomNumber(10);
+    let optionComputer = getRandomNumber(10);
 
     event.preventDefault();
     //Cuando pulse necesito recoger el valor selecionado
@@ -46,8 +45,8 @@ function handleClick(event) {
     }
 
     //Cuando tenga el valor seleccionado tengo que compararlo con el valor generado aleatorio.
-
-    feedbackPainter();
+    //Llamar y enviar una variable
+    feedbackPainter(optionPlayer);
 
     //Comprobamos numero de intentos
     counterTry++;
@@ -61,11 +60,14 @@ function handleClick(event) {
         //Metemos el resultado dentro del inner
         player.innerHTML = counterPlayer;
         computer.innerHTML = counterComputer;
+        buttonReset.classList.remove('hidden');
+    } else {
+        //Añado la clase de hidden al botón reset
+        buttonReset.classList.add('hidden');
     }
-
 }
 
-function feedbackPainter() {
+function feedbackPainter(optionPlayer, optionComputer) {
     if (optionPlayer === 0) {
         result.innerHTML = "Seleccione una opción";
     } else if (optionPlayer === optionComputer) {

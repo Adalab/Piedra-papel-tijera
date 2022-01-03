@@ -32,7 +32,7 @@ body {
     font-size: 20px;
     margin-bottom: 30px;
   }
-  .button{
+  .button, .buttonReset{
     border: 3px #800080 solid;
     border-radius: 5px;
     color: red;
@@ -52,4 +52,7 @@ body {
     width: 300px;
     height: 130px;
     padding: 20px;
+  }
+  .hidden{
+    display: none;
   }
