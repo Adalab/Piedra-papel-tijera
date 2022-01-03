@@ -32,7 +32,7 @@ function handleClick(event) {
 
     event.preventDefault();
     //Cuando pulse necesito recoger el valor selecionado
-    const optionPlayer = parseInt(options.value);
+    let optionPlayer = parseInt(options.value);
 
     //Convierto el valor aletorio al valor del seleccionable
 
@@ -46,20 +46,12 @@ function handleClick(event) {
 
     //Cuando tenga el valor seleccionado tengo que compararlo con el valor generado aleatorio.
     //Llamar y enviar una variable
-    feedbackPainter(optionPlayer);
+    feedbackPainter(optionPlayer, optionComputer);
 
     //Comprobamos numero de intentos
     counterTry++;
 
-    if (counterTry >= 10) {
-        counterPlayer = 0;
-        counterComputer = 0;
-
-        counterTry = 0;
-
-        //Metemos el resultado dentro del inner
-        player.innerHTML = counterPlayer;
-        computer.innerHTML = counterComputer;
+    if (counterTry > 10) {
         buttonReset.classList.remove('hidden');
     } else {
         //Añado la clase de hidden al botón reset
@@ -83,5 +75,15 @@ function feedbackPainter(optionPlayer, optionComputer) {
     }
 }
 
+function handleReset() {
+    counterPlayer = 0;
+    counterComputer = 0;
+    counterTry = 0;
+    //Metemos el resultado dentro del inner
+    player.innerHTML = counterPlayer;
+    computer.innerHTML = counterComputer;
+}
+
 //Eventos
 button.addEventListener('click', handleClick);
+buttonReset.addEventListener('click', handleReset);
