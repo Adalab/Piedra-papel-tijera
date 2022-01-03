@@ -6,27 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
 
     <div class="container">
-        <h1> Juego Piedra, Papel y tijera</h1>
-        <p>Introduce aquí la tu jugada</p>
+        <h1 class="title"> Juego Piedra, Papel y tijera</h1>
+        <p class="start">Introduce aquí tu jugada</p>
     </div>
-    <form>
-        <select class=" js_option">
+    <form class="form">
+        <select class="options js_option">
             <option value="0">Seleccione su jugada</option>
             <option value="1">Piedra</option>
             <option value="2">Papel</option>
             <option value="3">Tijera</option>
         </select>
-        <input type="button" class="js_button" value="Jugar" />
+        <input type="button" class="button js_button" value="Jugar" />
     </form>
-    <p class="js_result">Vamos a Jugar</p>
-    <p>Jugador: <span class="js_player">0</span></p>
-    <p>Computadora: <span class="js_computer">0</span></p>
 
+    <p class="goPlay js_result">Vamos a Jugar!!</p>
+    <div class="container2">
+        <p class="start
+        ">Jugador: <span class="js_player">0</span></p>
+        <p class="start">Computadora: <span class="js_computer">0</span></p>
+    </div>
+    <!-- <button type="reset">Reset</button> -->
 
     <script src="./js/main.js"></script>
 </body>

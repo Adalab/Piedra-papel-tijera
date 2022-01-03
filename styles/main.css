@@ -1,0 +1,55 @@
+body {
+    margin-left: 30px;
+    font-family:'Courier New', Courier, monospace;
+    color: #800080;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .goPlay{
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .start{
+      font-size: 23px;
+      font-weight: bold;
+  }
+  .options{
+    background-color: #F4A460;
+    border-radius: 5px;
+    border: none;
+    height: 60px;
+    width: 280px;
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .button{
+    border: 3px #800080 solid;
+    border-radius: 5px;
+    color: red;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    padding: 4px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  .container2{
+    border: 3px #800080 solid;
+    border-radius: 5px;
+    width: 300px;
+    height: 130px;
+    padding: 20px;
+  }

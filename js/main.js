@@ -35,16 +35,37 @@ function handleClick(event) {
     //Convierto el valor aletorio al valor del seleccionable
 
     if (optionComputer < 3) {
-        optionComputer = 1;
+        optionComputer = 1;//Piedra
     } else if (optionComputer >= 6) {
-        optionComputer = 2;
+        optionComputer = 2;//Papel
     } else {
-        optionComputer = 3;
+        optionComputer = 3;//Tijera
     }
 
     //Cuando tenga el valor seleccionado tengo que compararlo con el valor generado aleatorio.
 
+    feedbackPainter();
 
+    //Para reiniciar el random si no siempre el mismo resultado la computadora
+    optionComputer = getRandomNumber(10);
+
+    //Comprobamos numero de intentos
+    counterTry++;
+
+    if (counterTry >= 10) {
+        counterPlayer = 0;
+        counterComputer = 0;
+
+        counterTry = 0;
+
+        //Metemos el resultado dentro del inner
+        player.innerHTML = counterPlayer;
+        computer.innerHTML = counterComputer;
+    }
+
+}
+
+function feedbackPainter() {
     if (optionPlayer === 0) {
         result.innerHTML = "Seleccione una opción";
     } else if (optionPlayer === optionComputer) {
@@ -58,23 +79,6 @@ function handleClick(event) {
         result.innerHTML = "Has perdido";
         computer.innerHTML = ++counterComputer;
     }
-    //Para reiniciar el random si no siempre el mismo resultado la computadora
-    optionComputer = getRandomNumber(10);
-
-    //Comprobamos numero de intentos
-    counterTry++;
-
-    if (counterTry > 10) {
-        counterPlayer = 0;
-        counterComputer = 0;
-
-        counterTry = 0;
-
-        //Metemos el resultado dentro del inner
-        player.innerHTML = counterPlayer;
-        computer.innerHTML = counterComputer;
-    }
-
 }
 
 //Eventos
